@@ -11,7 +11,7 @@ openssl genrsa -aes256 -out ca-key.pem 4096
 ```
 2. Generate a public CA Cert
 ```bash
-openssl req -new -x509 -sha256 -days 365 -key ca-key.pem -out ca.pem
+openssl req -new -x509 -sha256 -days 8300 -key ca-key.pem -out ca.pem
 ```
 
 ### Generate Certificate
@@ -33,7 +33,13 @@ echo extendedKeyUsage = serverAuth >> extfile.cnf
 ```
 4. Create the certificate
 ```bash
-openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out cert.pem -extfile extfile.cnf -CAcreateserial
+openssl x509 -req -sha256 -days 8300 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out cert.pem -extfile extfile.cnf -CAcreateserial
+```
+
+5. Create certificate chain
+```bash
+cat cert.pem > fullchain.pem
+cat ca.pem >> fullchain.pem
 ```
 
 ## Certificate Formats
