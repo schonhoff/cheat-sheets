@@ -1,4 +1,10 @@
-# Terraform Cheat-Sheet
+# Terraform
+Terraform is a free and open-source infrastructure as code automation tool, to provision, change, and version resources on any environment.
+
+Project Homepage: [Terraform by HashiCorp](https://www.terraform.io/)
+Documentation: [Documentation | Terraform by HashiCorp](https://www.terraform.io/docs)
+TF Registry: [Terraform Registry](https://registry.terraform.io/)
+
 ## Format and Validate
 COMMAND | DESCRIPTION
 ---|---
@@ -50,3 +56,6 @@ COMMAND | DESCRIPTION
 ---|---
 `terraform login` | Login to Terraform Cloud with an API token
 `terraform logou` | Logout from Terraform Cloud
+
+## Import existing resources
+
